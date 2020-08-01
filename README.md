@@ -49,6 +49,6 @@
 
   ```
     layers:
-      - arn:aws:lambda:us-east-2:OMITTED:layer:xxx:9
+      - arn:aws:lambda:us-east-2:OMITTED:layer:xxx:1
   ```
   
