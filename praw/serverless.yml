@@ -1,0 +1,16 @@
+service: awsLayer-praw
+
+provider:
+  name: aws
+  runtime: python3.8
+  profile: Madushan
+  region: us-east-2
+  stage: ${opt:stage, 'prod'}
+
+layers:
+  praw:
+    name: praw
+    path: praw/
+    description: PRAW, an acronym for “Python Reddit API Wrapper”, is a Python package that allows for simple access to Reddit’s API.
+    compatibleRuntimes:
+      - python3.8
