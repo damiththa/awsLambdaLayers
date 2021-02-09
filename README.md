@@ -4,10 +4,12 @@
 
 - Create a new directory for the new library/packages (let's say `xxx`) and `cd` into it.
 
+- Create a new serverless project by running `serverless create --template aws-python3`
+
 - Create a folder structure as follows, 
 
   ```
-  └── lambda_layers
+  └── xxx
         └── python
             └── lib
                 └── python3.8
@@ -15,9 +17,9 @@
   ```
   and `cd` into `site-packages` directory.
 
-- Create a new serverless project by running `serverless create --template aws-python3`
-
 - `pip` install `xxx` as, `pip3 install xxx -t .` *by passing in `-t` parameter we specify where we want to install the libraries (the target directory) on our local folder.* **This is important**
+
+- Go up and be in the same direcoty as the `serverless.yml`
 
 - Update the `serverless.yml` as follows,
 
@@ -27,6 +29,7 @@
   provider:
     name: aws
     runtime: python3.8
+    profile: default # or the custom profile name 
     region: us-east-2
     stage: ${opt:stage, 'prod'}
 
