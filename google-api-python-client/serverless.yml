@@ -1,0 +1,16 @@
+service: google-api-python-client
+
+provider:
+  name: aws
+  runtime: python3.8
+  profile: Madushan
+  region: us-east-2
+  stage: ${opt:stage, 'prod'}
+
+layers:
+  google-api-python-client:
+    name: google-api-python-client
+    path: google-api-python-client/
+    description: This is the Google API Python client library for Google's discovery based APIs.
+    compatibleRuntimes:
+      - python3.8

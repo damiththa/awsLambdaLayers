@@ -1,0 +1,16 @@
+service: youtube-transcript-api
+
+provider:
+  name: aws
+  runtime: python3.8
+  profile: Madushan
+  region: us-east-2
+  stage: ${opt:stage, 'prod'}
+
+layers:
+  youtube-transcript-api:
+    name: youtube-transcript-api
+    path: youtube-transcript-api/
+    description: This is a python API which allows you to get the transcript/subtitles for a given YouTube video. It also works for automatically generated subtitles.
+    compatibleRuntimes:
+      - python3.8
